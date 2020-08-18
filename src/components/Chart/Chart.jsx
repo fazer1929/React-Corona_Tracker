@@ -43,7 +43,7 @@ const Chart = ({data,country}) => {
 
         />:null  
     )
-    console.log(data)
+    // console.log(data)
     const barChart = () =>(
         data.confirmed?
         <Bar
@@ -66,7 +66,7 @@ const Chart = ({data,country}) => {
 
     return(
         <div className={styles.container} >
-            {country?barChart():lineChart()}
+            {!country?lineChart():country!=="global"?barChart():lineChart()}
         </div>
     )
 }
